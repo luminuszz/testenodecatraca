@@ -7,7 +7,7 @@ const monitor = require('./monitor');
 const event = require('./event');
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -26,6 +26,7 @@ app.all('/**', (request, response) => {
     event(request, response);
 });
 
-app.listen(port, () => {
-    console.log(`Server started @ ${port}`);
-});
+
+
+
+app.listen(PORT);
